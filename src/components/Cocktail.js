@@ -7,7 +7,7 @@ import Loading from './Loading';
 
 const Cocktail = (props) => {
   const { coocktailItems } = useGlobalContext();
-  console.log(coocktailItems)
+
 
   return (
     <div className='cocktails-center mt-10'>
