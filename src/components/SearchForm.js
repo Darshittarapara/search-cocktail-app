@@ -1,9 +1,8 @@
 import React from 'react'
-import { useState } from 'react'
 import { useGlobalContext } from '../context'
 
 const SearchForm = () => {
-  const [searchInput, setSearchInput] = useState('');
+  
   const { onSearch } = useGlobalContext();
   const changeHandler = (value) => {
     console.log(value);
