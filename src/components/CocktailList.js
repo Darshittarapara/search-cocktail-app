@@ -1,10 +1,13 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom';
 import './CocktailList.css';
 
 const CocktailList = ({ id, title, url, alcoholic, category }) => {
-  console.log(url)
+  const navigator = useNavigate()
   const singleDetailsHandler = (drinkId) => {
     console.log(drinkId);
+    navigator(`/single-cocktail-details/${drinkId}`);
+
   }
   return (
     <div className='card mt-10' style={{ borderRadius: "10px" }}>
@@ -16,7 +19,7 @@ const CocktailList = ({ id, title, url, alcoholic, category }) => {
           <h3>{title}</h3>
           <h6>{category}</h6>
           <p>{alcoholic}</p>
-          <button className='btn btn-success' onClick={() => singleDetailsHandler(id)}>Details</button>
+          <button className='btn btn-success ' onClick={() => singleDetailsHandler(id)}>Details</button>
         </div>
 
       </div>
