@@ -7,7 +7,7 @@ const AppContext = React.createContext()
 
 const AppProvider = ({ children }) => {
   const [coocktailItems, setCoocktailItems] = useState([]);
-
+  const [hasError, setHasError] = useState(false);
   const fetchCockList = () => {
     for (let i = 1; i <= 12; i++) {
       axios.get(randomCoockTailurl)
@@ -22,14 +22,18 @@ const AppProvider = ({ children }) => {
 
   const searchCocktailHandler = async (query) => {
     const searchList = await searchCoockTailList(query);
-    console.log(searchList);
+    setHasError(false);
     if (searchList?.length > 0) {
       setCoocktailItems(searchList);
+      return true;
     }
+    setHasError(true);
+    setCoocktailItems([]);
   }
   const contextValues = {
     coocktailItems,
-    onSearch: searchCocktailHandler
+    onSearch: searchCocktailHandler,
+    hasError
   }
   return <AppContext.Provider value={contextValues}>{children}</AppContext.Provider>
 }

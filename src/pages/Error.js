@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom'
 
 const Error = () => {
   return (
-    <div>
-      <h2>error page</h2>
+    <div className='error-page'>
+      <h2>No cocktail found</h2>
     </div>
   )
 }

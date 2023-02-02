@@ -192,7 +192,10 @@ Error
 */
 .error-page {
   display: flex;
+  align-items: center;
+  margin-left: 340px;
   justify-content: center;
+  width: 100%;
 }
 .error-container {
   text-align: center;
@@ -229,6 +232,7 @@ Cocktails List
   .cocktails-center {
     grid-template-columns: repeat(auto-fill, minmax(338.8px, 1fr));
   }
+ 
 }
 /* 
 ====== 
@@ -349,6 +353,25 @@ Cocktail
 .drink-info {
   padding-top: 2rem;
 }
+@media screen and (min-width:580px) and (max-width:786px) {
+  .error-page {
+   margin: 0px !important;
+ }
+ .loader {
+   margin: 88px 12rem !important  ; 
+   
+ }
+}
+@media screen and (max-width:576px) {
+   .error-page {
+    margin: 0px !important;
+  }
+  .loader {
+    margin: 88px 12rem !important; 
+    
+  }
+}
+
 @media screen and (min-width: 992px) {
   .drink {
     display: grid;
